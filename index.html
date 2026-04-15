@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franco - Portafolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -38,8 +39,18 @@
         }
         
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            text-shadow: 0 2px 8px rgba(255,255,255,0.3);
         }
         
         nav ul {
@@ -66,8 +77,13 @@
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 800;
             margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            line-height: 1.2;
         }
         
         .hero p {
