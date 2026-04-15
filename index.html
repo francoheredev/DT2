@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franco - Portafolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Orbitron:wght@400;700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,20 +15,18 @@
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
-            color: #1f3a2c;
-            background: linear-gradient(135deg, #0d2818 0%, #1a4d3e 100%);
-            background-attachment: fixed;
+            color: #2d3d37;
+            background-color: #f5f9f7;
         }
         
         header {
-            background: linear-gradient(135deg, #1a4d3e 0%, #2e6e5f 100%);
+            background-color: #2d5f47;
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 0 30px rgba(34, 134, 58, 0.25), inset 0 1px 0 rgba(34, 134, 58, 0.2);
-            border-bottom: 2px solid #22863a;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         nav {
@@ -41,21 +39,18 @@
         }
         
         .logo {
-            font-family: 'Orbitron', monospace;
-            font-size: 2rem;
-            font-weight: 900;
-            letter-spacing: 0.1em;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
             transition: all 0.3s ease;
             cursor: pointer;
-            text-transform: uppercase;
-            color: #9dd4a3;
-            text-shadow: 0 0 15px rgba(157, 212, 163, 0.4);
+            color: white;
         }
         
         .logo:hover {
-            transform: scale(1.1) skewX(-5deg);
-            color: #c6e9c9;
-            text-shadow: 0 0 25px rgba(198, 233, 201, 0.6);
+            transform: scale(1.05);
+            opacity: 0.9;
         }
         
         nav ul {
@@ -71,12 +66,11 @@
         }
         
         nav a:hover {
-            color: #9dd4a3;
-            text-shadow: 0 0 10px rgba(157, 212, 163, 0.6);
+            opacity: 0.8;
         }
         
         .hero {
-            background: linear-gradient(180deg, #1a4d3e 0%, #2e6e5f 50%, #0d2818 100%);
+            background: linear-gradient(180deg, #2d5f47 0%, #3d7c5f 100%);
             color: white;
             padding: 8rem 2rem;
             text-align: center;
@@ -91,7 +85,7 @@
             left: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(34, 134, 58, 0.25) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
             animation: float 8s ease-in-out infinite;
         }
         
@@ -102,7 +96,7 @@
             right: -20%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(157, 212, 163, 0.15) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
             animation: float 10s ease-in-out infinite reverse;
         }
         
@@ -117,61 +111,56 @@
         }
         
         .hero h1 {
-            font-family: 'Orbitron', monospace;
-            font-size: 4.5rem;
-            font-weight: 900;
+            font-family: 'Poppins', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             letter-spacing: -0.02em;
-            color: #c6e9c9;
-            animation: breatheColor 4s ease-in-out infinite;
-            text-shadow: 0 0 20px rgba(157, 212, 163, 0.3);
+            color: white;
+            animation: breatheScale 4s ease-in-out infinite;
             line-height: 1.1;
         }
         
-        @keyframes breatheColor {
-            0%, 100% { color: #9dd4a3; text-shadow: 0 0 15px rgba(157, 212, 163, 0.2); }
-            50% { color: #c6e9c9; text-shadow: 0 0 25px rgba(198, 233, 201, 0.4); }
+        @keyframes breatheScale {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
         
         .hero p {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             margin-bottom: 2rem;
             opacity: 1;
-            color: #9dd4a3;
-            font-weight: 600;
-            text-shadow: 0 0 15px rgba(157, 212, 163, 0.3);
-            letter-spacing: 0.05em;
-            animation: breathe 4s ease-in-out infinite;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            animation: breatheOpacity 4s ease-in-out infinite;
         }
         
-        @keyframes breathe {
-            0%, 100% { opacity: 0.8; }
+        @keyframes breatheOpacity {
+            0%, 100% { opacity: 0.85; }
             50% { opacity: 1; }
         }
         }
         
         .cta-button {
-            background: linear-gradient(135deg, #22863a, #2ea043);
-            color: white;
-            padding: 1rem 2.5rem;
-            border: 2px solid #22863a;
+            background-color: white;
+            color: #2d5f47;
+            padding: 0.8rem 2rem;
+            border: none;
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 600;
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 0 20px rgba(34, 134, 58, 0.3), inset 0 0 20px rgba(46, 158, 67, 0.1);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         .cta-button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 0 40px rgba(46, 158, 67, 0.5), inset 0 0 20px rgba(46, 158, 67, 0.2);
-            border-color: #2ea043;
-            background: linear-gradient(135deg, #2ea043, #22863a);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background-color: #f5f9f7;
         }
         
         .container {
@@ -182,24 +171,20 @@
         
         section {
             margin-bottom: 4rem;
-            background: rgba(26, 77, 62, 0.6);
+            background: white;
             padding: 3rem;
-            border-radius: 5px;
-            box-shadow: 0 0 30px rgba(34, 134, 58, 0.15), inset 0 1px 0 rgba(34, 134, 58, 0.1);
-            border: 2px solid rgba(34, 134, 58, 0.3);
-            border-left: 5px solid #22863a;
-            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #3d7c5f;
         }
         
         section h2 {
-            color: #22863a;
+            color: #2d5f47;
             margin-bottom: 2rem;
-            font-size: 2.2rem;
-            border-bottom: 3px solid #2ea043;
+            font-size: 2rem;
+            border-bottom: 2px solid #3d7c5f;
             padding-bottom: 1rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
         
         .portfolio-grid {
@@ -209,22 +194,22 @@
         }
         
         .portfolio-item {
-            background: rgba(13, 40, 24, 0.8);
-            border-radius: 5px;
+            background: #f9fdfb;
+            border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s;
-            border: 2px solid rgba(34, 134, 58, 0.3);
+            border: 1px solid #e0ede7;
         }
         
         .portfolio-item:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 0 40px rgba(46, 158, 67, 0.4), 0 0 80px rgba(34, 134, 58, 0.2);
-            border-color: #2ea043;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(45, 95, 71, 0.12);
+            border-color: #3d7c5f;
         }
         
         .portfolio-item-image {
             height: 200px;
-            background: linear-gradient(135deg, #22863a 0%, #2ea043 50%, #1a4d3e 100%);
+            background: linear-gradient(135deg, #3d7c5f 0%, #2d5f47 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -242,13 +227,18 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
             animation: shimmer 3s infinite;
         }
         
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
         @keyframes breatheGradient {
-            0%, 100% { opacity: 0.9; }
-            50% { opacity: 1; }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.95; }
         }
         
         .portfolio-item-content {
@@ -256,15 +246,13 @@
         }
         
         .portfolio-item h3 {
-            color: #9dd4a3;
+            color: #2d5f47;
             margin-bottom: 0.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-weight: 600;
         }
         
         .portfolio-item p {
-            color: #a8d0b8;
+            color: #5a6d65;
             font-size: 0.9rem;
         }
         
@@ -275,35 +263,32 @@
         }
         
         .skill-card {
-            background: linear-gradient(135deg, rgba(34, 134, 58, 0.15) 0%, rgba(46, 158, 67, 0.1) 100%);
-            color: white;
+            background: linear-gradient(135deg, #f5f9f7 0%, #eff6f4 100%);
+            color: #2d5f47;
             padding: 1.5rem;
-            border-radius: 5px;
+            border-radius: 8px;
             text-align: center;
             transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(34, 134, 58, 0.2), inset 0 1px 0 rgba(34, 134, 58, 0.1);
-            border: 2px solid rgba(34, 134, 58, 0.3);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0ede7;
             animation: breatheCard 4s ease-in-out infinite;
         }
         
         @keyframes breatheCard {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
+            50% { transform: scale(1.01); }
         }
         
         .skill-card:hover {
-            transform: translateY(-5px) scale(1.08);
-            box-shadow: 0 0 40px rgba(46, 158, 67, 0.4);
-            border-color: #2ea043;
-            background: linear-gradient(135deg, rgba(34, 134, 58, 0.25) 0%, rgba(46, 158, 67, 0.2) 100%);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 16px rgba(45, 95, 71, 0.12);
+            border-color: #3d7c5f;
         }
         
         .skill-card h3 {
             margin-bottom: 0.5rem;
-            font-weight: 700;
-            color: #c6e9c9;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            font-weight: 600;
+            color: #2d5f47;
         }
         
         .contact-form {
@@ -317,20 +302,20 @@
         .contact-form input,
         .contact-form textarea {
             padding: 0.8rem;
-            border: 2px solid rgba(34, 134, 58, 0.3);
+            border: 1px solid #d5e2dc;
             border-radius: 5px;
             font-family: inherit;
             font-size: 1rem;
             transition: all 0.3s;
-            background: rgba(13, 40, 24, 0.8);
-            color: #c6e9c9;
+            background: white;
+            color: #2d3d37;
         }
         
         .contact-form input:focus,
         .contact-form textarea:focus {
             outline: none;
-            border-color: #2ea043;
-            box-shadow: 0 0 30px rgba(46, 158, 67, 0.3), inset 0 0 30px rgba(46, 158, 67, 0.05);
+            border-color: #3d7c5f;
+            box-shadow: 0 0 0 3px rgba(61, 124, 95, 0.1);
         }
         
         .contact-form textarea {
@@ -339,35 +324,31 @@
         }
         
         .contact-form button {
-            background: linear-gradient(135deg, #22863a, #2ea043);
+            background-color: #2d5f47;
             color: white;
             padding: 0.8rem;
-            border: 2px solid #22863a;
+            border: none;
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 600;
             transition: all 0.3s;
-            box-shadow: 0 0 20px rgba(34, 134, 58, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
         
         .contact-form button:hover {
-            background: linear-gradient(135deg, #2ea043, #22863a);
-            box-shadow: 0 0 40px rgba(46, 158, 67, 0.5);
+            background-color: #1f4237;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             transform: translateY(-2px);
-            border-color: #2ea043;
         }
         
         footer {
-            background: linear-gradient(135deg, #0d2818 0%, #1a4d3e 100%);
+            background-color: #2d5f47;
             color: white;
             text-align: center;
             padding: 2rem;
             margin-top: 4rem;
-            border-top: 2px solid #22863a;
-            box-shadow: 0 -10px 40px rgba(34, 134, 58, 0.15);
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08);
         }
         
         @media (max-width: 768px) {
