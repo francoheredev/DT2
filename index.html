@@ -179,7 +179,7 @@
         section {
             margin-bottom: 4rem;
             background: white;
-            padding: 3rem;
+            padding: 1.5rem 3rem;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
             border-left: 5px solid #3d7c5f;
@@ -187,11 +187,40 @@
         
         section h2 {
             color: #2d5f47;
-            margin-bottom: 2rem;
+            margin-bottom: 0;
             font-size: 2rem;
             border-bottom: 2px solid #3d7c5f;
             padding-bottom: 1rem;
             font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        
+        section h2::after {
+            content: '▾';
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        section.open h2::after {
+            transform: rotate(180deg);
+        }
+        
+        .section-content {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+            opacity: 0;
+            padding: 0 1px;
+        }
+        
+        section.open .section-content {
+            max-height: 3000px;
+            opacity: 1;
+            padding: 2rem 1px 1px;
         }
         
         .portfolio-grid {
@@ -417,10 +446,10 @@
     </section>
     
     <div class="container">
-        <section id="portafolio">
+        <section id="portafolio" class="open">
             <h2>📁 Portafolio</h2>
-            
-            <h3 style="color: #2d5f47; margin-bottom: 1rem; font-size: 1.4rem;">🎮 GameDev</h3>
+            <div class="section-content">
+                <h3 style="color: #2d5f47; margin-bottom: 1rem; font-size: 1.4rem;">🎮 GameDev</h3>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-item-image">
@@ -462,11 +491,13 @@
                     </div>
                 </div>
             </div>
+            </div>
         </section>
         
-        <section id="educacion">
+        <section id="educacion" class="open">
             <h2>🎓 Educación</h2>
-            <div class="education-item">
+            <div class="section-content">
+                <div class="education-item">
                 <h3>Lic. en Producción de Videojuegos y Entretenimiento Digital</h3>
                 <p><strong>Universidad Nacional de Rafaela (UNRaf)</strong></p>
                 <p>Estudiante activo - Desarrollo de videojuegos, programación, diseño y producción digital</p>
@@ -481,11 +512,13 @@
                 <p><strong>EETP N°2073 "San Pablo"</strong></p>
                 <p>Título recibido - Electrónica, sistemas y tecnología</p>
             </div>
+            </div>
         </section>
         
-        <section id="habilidades">
+        <section id="habilidades" class="open">
             <h2>🛠️ Habilidades</h2>
-            <div class="skills-grid">
+            <div class="section-content">
+                <div class="skills-grid">
                 <div class="skill-card">
                     <h3>HTML5</h3>
                     <p>Semántica y estructura web</p>
@@ -543,21 +576,32 @@
                     <p>Diseño UI/UX y prototipado</p>
                 </div>
             </div>
+            </div>
         </section>
         
-        <section id="contacto">
+        <section id="contacto" class="open">
             <h2>📧 Contacto</h2>
-            <form class="contact-form">
+            <div class="section-content">
+                <form class="contact-form">
                 <input type="text" placeholder="Tu nombre" required>
                 <input type="email" placeholder="Tu correo" required>
                 <textarea placeholder="Tu mensaje" required></textarea>
                 <button type="submit">Enviar Mensaje</button>
             </form>
+            </div>
         </section>
     </div>
     
     <footer>
         <p>&copy; 2026 Franco. Todos los derechos reservados.</p>
     </footer>
+    
+    <script>
+        document.querySelectorAll('section h2').forEach(function(h2) {
+            h2.addEventListener('click', function() {
+                this.parentElement.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
 </html>
