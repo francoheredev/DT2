@@ -223,6 +223,45 @@
             padding: 2rem 1px 1px;
         }
         
+        .sub-header {
+            color: #2d5f47;
+            margin: 2rem 0 1rem;
+            font-size: 1.4rem;
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #d5e2dc;
+            padding-bottom: 0.5rem;
+        }
+        
+        .sub-header:first-of-type {
+            margin-top: 0;
+        }
+        
+        .sub-header::after {
+            content: '▾';
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .sub-header.open::after {
+            transform: rotate(180deg);
+        }
+        
+        .sub-content {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+            opacity: 0;
+        }
+        
+        .sub-header.open + .sub-content {
+            max-height: 3000px;
+            opacity: 1;
+        }
+        
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -449,48 +488,52 @@
         <section id="portafolio" class="open">
             <h2>📁 Portafolio</h2>
             <div class="section-content">
-                <h3 style="color: #2d5f47; margin-bottom: 1rem; font-size: 1.4rem;">🎮 GameDev</h3>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-item-image">
-                        <img src="krill-logo.png" alt="Krill Compis Logo" style="width: 100%; height: 100%; object-fit: contain;">
-                    </div>
-                    <div class="portfolio-item-content">
-                        <h3>Krill Compis</h3>
-                        <p>Este videojuego tipo puzzle cooperativo fue desarrollado por KFP cómo proyecto en la facultad Nacional de Rafaela, me ocupé de la programación y el diseño de los niveles.</p>
-                        <a href="https://francohere.itch.io/krillcompis" target="_blank" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem; margin-top: 1rem; display: inline-block;">Jugar en itch.io</a>
+                <h3 class="sub-header open">🎮 GameDev</h3>
+                <div class="sub-content">
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-item-image">
+                                <img src="krill-logo.png" alt="Krill Compis Logo" style="width: 100%; height: 100%; object-fit: contain;">
+                            </div>
+                            <div class="portfolio-item-content">
+                                <h3>Krill Compis</h3>
+                                <p>Este videojuego tipo puzzle cooperativo fue desarrollado por KFP cómo proyecto en la facultad Nacional de Rafaela, me ocupé de la programación y el diseño de los niveles.</p>
+                                <a href="https://francohere.itch.io/krillcompis" target="_blank" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem; margin-top: 1rem; display: inline-block;">Jugar en itch.io</a>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <div class="portfolio-item-image">🍬</div>
+                            <div class="portfolio-item-content">
+                                <h3>Just Have My Candy</h3>
+                                <p>Game jam para la Game Lab 2024 con temática Halloween. Participé como game designer en un equipo de 3 personas. Juego de supervivencia desarrollado en Unity.</p>
+                                <a href="https://deivid-deivis.itch.io/just-have-my-candy" target="_blank" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem; margin-top: 1rem; display: inline-block;">Jugar en itch.io</a>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-item">
+                            <div class="portfolio-item-image">🍨</div>
+                            <div class="portfolio-item-content">
+                                <h3>S.O.S Ice Cream</h3>
+                                <p>Un proyecto que busca imitar las mecánicas y jugabilidad de Super Meat Boy pero con otra estética, el desarrollo fue completamente realizado por mí.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-item-image">🍬</div>
-                    <div class="portfolio-item-content">
-                        <h3>Just Have My Candy</h3>
-                        <p>Game jam para la Game Lab 2024 con temática Halloween. Participé como game designer en un equipo de 3 personas. Juego de supervivencia desarrollado en Unity.</p>
-                        <a href="https://deivid-deivis.itch.io/just-have-my-candy" target="_blank" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem; margin-top: 1rem; display: inline-block;">Jugar en itch.io</a>
+                <h3 class="sub-header open">🌐 Desarrollo Web</h3>
+                <div class="sub-content">
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-item-image">🌐</div>
+                            <div class="portfolio-item-content">
+                                <h3>OPC Rosario</h3>
+                                <p>Desarrollo completo del sitio web del Observatorio de Políticas Culturales de la UNR. Diseño, maquetación, tema WordPress personalizado, integración de contenido, gestión de dominio, hosting y deploy.</p>
+                                <a href="https://opcrosario.com.ar/" target="_blank" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem; margin-top: 1rem; display: inline-block;">Visitar sitio</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="portfolio-item">
-                    <div class="portfolio-item-image">🍨</div>
-                    <div class="portfolio-item-content">
-                        <h3>S.O.S Ice Cream</h3>
-                        <p>Un proyecto que busca imitar las mecánicas y jugabilidad de Super Meat Boy pero con otra estética, el desarrollo fue completamente realizado por mí.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <h3 style="color: #2d5f47; margin: 2rem 0 1rem; font-size: 1.4rem;">🌐 Desarrollo Web</h3>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-item-image">🌐</div>
-                    <div class="portfolio-item-content">
-                        <h3>OPC Rosario</h3>
-                        <p>Desarrollo completo del sitio web del Observatorio de Políticas Culturales de la UNR. Diseño, maquetación, tema WordPress personalizado, integración de contenido, gestión de dominio, hosting y deploy.</p>
-                        <a href="https://opcrosario.com.ar/" target="_blank" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem; margin-top: 1rem; display: inline-block;">Visitar sitio</a>
-                    </div>
-                </div>
-            </div>
             </div>
         </section>
         
@@ -600,6 +643,11 @@
         document.querySelectorAll('section h2').forEach(function(h2) {
             h2.addEventListener('click', function() {
                 this.parentElement.classList.toggle('open');
+            });
+        });
+        document.querySelectorAll('.sub-header').forEach(function(h3) {
+            h3.addEventListener('click', function() {
+                this.classList.toggle('open');
             });
         });
     </script>
